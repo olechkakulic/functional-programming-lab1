@@ -1,0 +1,6 @@
+{:paths ["src" "test"]
+ :deps {}
+ :aliases
+ {:test {:extra-paths ["test"]
+         :exec-fn    false}
+  :lint {:deps {}}}}

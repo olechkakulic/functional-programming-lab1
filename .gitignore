@@ -1,0 +1,32 @@
+# === Clojure / Leiningen ===
+/target/
+/classes/
+/checkouts/
+/.cpcache/
+/.lein-*
+/.nrepl-port
+/.prepl-port
+
+# Profiles and Maven artifacts
+profiles.clj
+pom.xml
+pom.xml.asc
+*.jar
+*.class
+
+# === Tools / Linters ===
+/.clj-kondo/
+/.cljfmt.edn
+.cljfmt.edn
+.cljfmt/
+
+# === IDE / Editors ===
+.idea/
+*.iml
+.calva/
+.lsp/
+.vscode/
+
+# === Other ===
+.hgignore
+.hg/
