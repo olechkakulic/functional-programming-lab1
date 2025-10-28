@@ -15,4 +15,3 @@
 (defn solve-7-sieve
   []
   (nth (sieve) 10000))
-

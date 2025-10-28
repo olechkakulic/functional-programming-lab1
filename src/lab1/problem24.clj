@@ -24,7 +24,7 @@
 (defn solve-24-tail []
   (nth-perm-tail (map str (range 0 10)) 1000000))
 
-;; 2) ОБЫЧНАЯ РЕКУРСИЯ 
+;; 2) ОБЫЧНАЯ РЕКУРСИЯ
 (defn nth-perm-recursive
   [items k]
   (let [items (vec items)

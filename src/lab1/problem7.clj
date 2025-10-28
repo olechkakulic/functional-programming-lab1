@@ -12,7 +12,7 @@
               (not-any? #(zero? (mod n %)) (range 3 (inc lim) 2))))
     false))
 
-;; 1) Хвостовая рекурсия 
+;; 1) Хвостовая рекурсия
 (defn nth-prime-tail
   "Возвращает n-ый простой (1-based). Хвостовая рекурсия."
   [n]
@@ -26,7 +26,7 @@
 (defn solve-7-tail []
   (nth-prime-tail N))
 
-;; 2) Рекурсивный вариант 
+;; 2) Рекурсивный вариант
 (defn nth-prime-recursive
   [n]
   (if (= n 1)
@@ -72,7 +72,7 @@
   (let [ub (upper-bound-nth-prime N)]
     (nth (primes-up-to ub) (dec N))))
 
-;; 5) Loop/recur то же самое что и хвостовая рекурсия. 
+;; 5) Loop/recur то же самое что и хвостовая рекурсия.
 (defn solve-7-loop
   []
   (loop [candidate 2 found 0]
@@ -81,4 +81,3 @@
         candidate
         (recur (inc candidate) (inc found)))
       (recur (inc candidate) found))))
-
