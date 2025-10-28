@@ -51,7 +51,7 @@
 ;; 4) Генерация при помощи ФВП (iterate/filter)
 (defn solve-7-map
   []
-  (nth (filter prime? (iterate inc 2)) (dec N)))
+  (nth (filter prime? (map (fn [n] (+ 2 n)) (iterate inc 0))) (dec N)))
 
 ;; 3) Модульная реализация: оценка верхней границы -> генерация -> фильтрация -> извлечение
 (defn upper-bound-nth-prime
