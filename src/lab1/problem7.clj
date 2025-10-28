@@ -48,12 +48,12 @@
 (defn solve-7-lazy []
   (nth primes-lazy (dec N)))
 
-;; 4) Генерация при помощи ФВП (iterate/filter)
+;; 4) Генерация при помощи map
 (defn solve-7-map
   []
   (nth (filter prime? (map (fn [n] (+ 2 n)) (iterate inc 0))) (dec N)))
 
-;; 3) Модульная реализация: оценка верхней границы -> генерация -> фильтрация -> извлечение
+;; 3) Модульная реализация
 (defn upper-bound-nth-prime
   "Оценка верхней границы для n-го простого: n*(log n + log log n) (для n >= 6)."
   [n]
