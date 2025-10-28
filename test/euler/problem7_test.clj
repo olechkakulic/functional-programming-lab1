@@ -2,8 +2,7 @@
   (:require [clojure.java.shell :as shell]
             [clojure.string :as str]
             [clojure.test :refer [deftest is testing]]
-            [lab1.problem7 :as p7]
-            [lab1.problem7-alt :as p7alt]))
+            [lab1.problem7 :as p7]))
 
 (defn run-python-script [script-path]
   (let [result (shell/sh "python3" script-path)]
@@ -33,8 +32,7 @@
     (is (= 104743 (p7/solve-7-modular)))
     (is (= 104743 (p7/solve-7-map)))
     (is (= 104743 (p7/solve-7-loop)))
-    (is (= 104743 (p7/solve-7-lazy)))
-    (is (= 104743 (p7alt/solve-7-sieve)))))
+    (is (= 104743 (p7/solve-7-lazy)))))
 
 (deftest consistency-check
   (testing "Все реализации задачи 7 возвращают одинаковый результат"
@@ -44,8 +42,7 @@
                         p7/solve-7-modular
                         p7/solve-7-map
                         p7/solve-7-loop
-                        p7/solve-7-lazy
-                        p7alt/solve-7-sieve])]
+                        p7/solve-7-lazy])]
       (is (apply = results)))))
 
 (deftest euler7-correctness
@@ -55,8 +52,7 @@
                           ;;  (str (p7/solve-7-recursive))
                            (str (p7/solve-7-map))
                            (str (p7/solve-7-loop))
-                           (str (p7/solve-7-lazy))
-                           (str (p7alt/solve-7-sieve))]
+                           (str (p7/solve-7-lazy))]
           python-result (run-python-script "./src/lab1/python_euler7.py")]
       (is (every? #(= expected %) clojure-results))
       (is (= expected python-result)))))

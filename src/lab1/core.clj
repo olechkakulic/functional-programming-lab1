@@ -3,7 +3,6 @@
    [clojure.java.shell :as shell]
    [clojure.string :as str]
    [lab1.problem7 :as p7]
-   [lab1.problem7-alt :as p7alt]
    [lab1.problem24 :as p24]))
 
 (defn run-python [script]
@@ -22,7 +21,6 @@
   (println "map-based:       " (p7/solve-7-map))
   (println "loop/recur:      " (p7/solve-7-loop))
   (println "lazy filter:     " (p7/solve-7-lazy))
-  (println "sieve (lazy):    " (p7alt/solve-7-sieve))
   (println "Python:" (run-python "./src/lab1/python_euler7.py"))
   (println "\nВсе реализации должны давать одинаковый ответ: 104743")
 
