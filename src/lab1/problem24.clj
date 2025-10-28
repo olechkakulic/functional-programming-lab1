@@ -8,18 +8,18 @@
 ;; 1) ХВОСТОВАЯ РЕКУРСИЯ
 (defn nth-perm-tail
   [digits k]
-  (let [k (dec k)] 
+  (let [k (dec k)]
     (loop [elems (vec digits)
-           kk k             
-           acc []]          
+           kk k
+           acc []]
       (if (empty? elems)
-        (join acc) 
+        (join acc)
         (let [m (count elems)
-              f (factorial (dec m)) 
-              idx (quot kk f)       
-              chosen (nth elems idx) 
-              new-elems (vec (concat (subvec elems 0 idx) (subvec elems (inc idx))))] 
-          (recur new-elems (rem kk f) (conj acc chosen))))))) 
+              f (factorial (dec m))
+              idx (quot kk f)
+              chosen (nth elems idx)
+              new-elems (vec (concat (subvec elems 0 idx) (subvec elems (inc idx))))]
+          (recur new-elems (rem kk f) (conj acc chosen)))))))
 
 (defn solve-24-tail []
   (nth-perm-tail (map str (range 0 10)) 1000000))
@@ -60,12 +60,12 @@
 
 (defn find-nth-by-reduce
   [perms n]
-  (second 
+  (second
    (reduce (fn [[i _] p]
              (if (= i n)
-               (reduced [i p]) 
+               (reduced [i p])
                [(inc i) p]))
-           [1 nil] 
+           [1 nil]
            perms)))
 
 (defn solve-24-modular

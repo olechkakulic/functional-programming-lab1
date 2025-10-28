@@ -31,7 +31,7 @@
   [n]
   (if (= n 1)
     2
-    (let [prev-prime (nth-prime-recursive (dec n))] 
+    (let [prev-prime (nth-prime-recursive (dec n))]
       (loop [candidate (inc prev-prime)]
         (if (prime? candidate)
           candidate
